@@ -43,7 +43,7 @@
 		//显示标识
 		this.isShown = true;
 
-		//关闭按钮的冒泡的自定义事件绑定
+		//关闭按钮的冒泡的自定义事件绑定, 这个只针对 data-dismiss="modal" 按钮的处理
 		this.$Element.on('click.dismiss.bao.modal', '[data-dismiss="modal"]', $.proxy(this.hide, this));
 
 		/**
@@ -92,7 +92,7 @@
 
 			this.$Backdrop = $('<div class="modal-backdrop ' + isAnimate + '" />').appendTo($(document.body));
 
-			//绑定遮罩消失逻辑,dismiss的自定义事件,
+			//绑定遮罩消失逻辑, 点击任何区域都会触发! 但不是任何时候都消失
 			this.$Element.on('click.dismiss.bao.modal', $.proxy(function (e) {
                 //这里就是如果点击自己, 就不消失, 如果点击的是弹窗之外位置, 就遮罩等消失,
 				if (e.target !== e.currentTarget) return;
@@ -113,7 +113,7 @@
 			}
 
 		} else if (!this.isShown && this.$Backdrop) {
-			//如果弹窗不是显示, 就把遮罩隐藏掉
+			//如果弹窗不是显示且有遮罩, 就把遮罩(淡出掉)
 			this.$Backdrop.removeClass('in');
 
             //api中有说明, 只有当有fade类名时候, 才有淡入淡出动画
@@ -126,7 +126,7 @@
 		}
 	};
 
-	//遮罩带动画出淡出消失
+	//弹窗动画消失
 	Modal.prototype.hide = function (e) {
 		if (e) e.preventDefault();
 
@@ -140,6 +140,7 @@
 
 		$(document).off('focusin.bao.modal');
 
+        //弹窗开始消失
 		this.$Element.removeClass('in').attr('aria-hidden', true).off('click.dismiss.bao.modal');
 
         //带动画淡出消失之后, 弹窗再移出
@@ -149,7 +150,7 @@
 
 	};
 
-	//弹窗隐藏
+	//弹窗消失之后
 	Modal.prototype.hideModal = function () {
 		var self = this;
 		this.$Element.hide();
