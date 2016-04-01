@@ -44,10 +44,12 @@
     <!-- 为了能更简洁的表达 html中实现tab对js和css的依赖, 所以不必要的类名 自定义名都去掉,更方便学习  -->
     <div class="my-container" >
         <ul class="clearfix">
+            <!-- data-toggle="tab" 这个比不可少, data-target 可以用 href代替 -->
             <li class="active"><a data-toggle="tab" data-target="#tab_per_info">个人资料</a></li>
             <li class=""><a data-toggle="tab" data-target="#tab_per_verify">认证信息</a></li>
         </ul>
 
+        <!-- tab-content , tab-pane 必不可少 -->
         <div class=" tab-content">
             <!-- 详情 -->
             <div class=" tab-pane fade in active"  id="tab_per_info">
@@ -62,8 +64,6 @@
             <!-- 验证结束 -->
 
         </div>
-        <!-- 个人信息主区域结束 -->
-
 
     </div>
 

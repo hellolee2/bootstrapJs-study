@@ -29,7 +29,7 @@
         var e          = $.Event('show.bao.tab', {
             relatedTarget: $PreviousA
         });
-        //提供tab.js api中开始show的接口(详情见tab.js api)
+        //提供tab.js api中开始show的接口(详情见tab.js api: http://v3.bootcss.com/javascript/)
         $ElemA.trigger(e);
 
         var $Target = $(targetSelector);
@@ -40,11 +40,12 @@
 
         //tab-content中 oTarget的active变化
         this.activeChange($Target, $Target.parent(), function () {
-            //提供展示之后的接口
+            //提供a标签展示之后(shown)的api接口
             $ElemA.trigger({
                 type: 'shown.bao.tab',
                 relatedTarget: $PreviousA
             });
+            //tab-pane 区域展示后(shown) 的api接口
 			$Target.trigger({
                 type: 'shown.bao.tabPane',
 				element: $ElemA,
@@ -53,9 +54,16 @@
         });
     };
 
+    /**
+     * tab中 两个区域
+     * @param  {[type]}   $TargetElement [description]
+     * @param  {[type]}   container      [description]
+     * @param  {Function} callback       [description]
+     * @return {[type]}                  [description]
+     */
     Tab.prototype.activeChange = function ($TargetElement, container, callback) {
         var $NowActive = container.find('> .active'); //当前的active元素
-        var supportTransitionEvent = $.support.transition.end;
+        var supportTransitionEvent = $.support.transition.end; //页面加载完就获取到的transtion兼容事件, 详见transition.js
         var canTransition = callback && supportTransitionEvent && $NowActive.hasClass('fade');
 
         function end() {
