@@ -1,5 +1,5 @@
 /**
- * tab.js 学习
+ * tab.js 学习和分析
  * @author libaoxu 2016-03-20
 */
 (function ($) {
@@ -26,10 +26,11 @@
         if ($ElemA.parent('li').hasClass('active')) return;
 
         var $PreviousA = $Ul.find('.active a')[0]; //前一个ative 下的 a标签
+        //绑定自定义事件
         var e          = $.Event('show.bao.tab', {
             relatedTarget: $PreviousA
         });
-        //提供tab.js api中开始show的接口(详情见tab.js api: http://v3.bootcss.com/javascript/)
+        //触发自定义事件 提供tab.js api中开始show的接口(详情见tab.js api: http://v3.bootcss.com/javascript/)
         $ElemA.trigger(e);
 
         var $Target = $(targetSelector);
@@ -46,6 +47,7 @@
                 relatedTarget: $PreviousA
             });
             //tab-pane 区域展示后(shown) 的api接口
+            //trigger 传过去的参数 可以再绑定该自定义事件函数中 通过 e.data.relatedTarget 获得
 			$Target.trigger({
                 type: 'shown.bao.tabPane',
 				element: $ElemA,
