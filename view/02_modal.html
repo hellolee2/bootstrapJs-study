@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>modal示例</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="content">
+    <meta name="description" content="">
+    <meta name="author" content="libaoxu">
+
+    <link rel="stylesheet" href="../css/lib/base.css">
+    <link rel="stylesheet" href="../css/modal.css">
+
+</head>
+<body>
+<!-- modal容器 -->
+<div class="my-container">
+
+    <div class=" name " data-toggle="modal" data-target="#modal_modify_userName" >怪人鹿几</div>
+
+    <!-- 用户名输入弹层 -->
+    <div class="modal fade " id="modal_modify_userName">
+        <div class="modal-dialog">
+            <div class="modal-content ">
+                <h3 >编辑名称</h3>
+                <div>
+                    <input type="text" >
+                </div>
+                <div class="button-group clearfix">
+                    <button type="button" data-dismiss="modal">取消</button>
+                    <button type="button" data-dismiss="modal">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="../js/lib/jQuery.js"></script>
+<script src="../js/transition.js"></script>
+<script src="../js/modal.js"></script>
+
+</body>
+</html>
