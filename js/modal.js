@@ -143,14 +143,14 @@
         //弹窗开始消失
 		this.$Element.removeClass('in').attr('aria-hidden', true).off('click.dismiss.bao.modal');
 
-        //带动画淡出消失之后, 弹窗再移出
+        //绑定弹窗带动画淡出消失之后事件
 		$.support.transition && this.$Element.hasClass('fade') ?
 			this.$Element.one( $.support.transition.end, $.proxy(this.hideModal, this) ).emulateTransitionEnd(300)
 			: this.hideModal();
 
 	};
 
-	//弹窗消失之后
+	//弹窗消失之后, 这里通过this.backdrop这个代理, 主要处理遮罩消失及移除
 	Modal.prototype.hideModal = function () {
 		var self = this;
 		this.$Element.hide();
