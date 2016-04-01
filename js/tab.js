@@ -56,9 +56,9 @@
 
     /**
      * tab中 两个区域
-     * @param  {[type]}   $TargetElement [description]
-     * @param  {[type]}   container      [description]
-     * @param  {Function} callback       [description]
+     * @param  {$}   $TargetElement [目标的元素(jq对象, 非dom对象)]
+     * @param  {$}   container      [承载元素的容器]
+     * @param  {Function} callback       [回调函数]
      * @return {[type]}                  [description]
      */
     Tab.prototype.activeChange = function ($TargetElement, container, callback) {
@@ -81,16 +81,24 @@
             callback && callback.call($TargetElement);
         }
 
+        //绑定一次性 transtion事件, 即只执行一次,
+        //防止每次点击都绑定, 绑定多次, 会多次执行多洗 end函数
+        // emulateTransitionEnd transiton.js会有说明
         canTransition
             ? $NowActive.one(supportTransitionEvent, end).emulateTransitionEnd(150)
             : end();
 
+        //透明度为1, 元素属性变化, 会触发 supportTransitionEvent对应的 end函数
         $NowActive.removeClass('in');
     };
 
+    // 如果全局已经有一个 $.fn.tab 了 ,则先存一下, 下边接着用这个名, 回头吧old 通过noConflict传回去
     var old = $.fn.tab;
 
-    //放到fn属性上
+    /*
+        把tab放到$.fn上, 如果问$. 与 $.fn 的区别 去学习下基本的jq吧
+        这里简单说下, $.fn 就是 $(selector)一样, 所以 下面可以$(this).tab('show'); 进行调用tab
+     */
     $.fn.tab = function ( option ) {
         return this.each(function () {
             var $This = $(this);
@@ -100,17 +108,21 @@
                 //(data = new Tab(this)) 括号内赋值运算, 再data('bao.tab', data); 运算
                 $This.data('bao.tab', (data = new Tab(this)));
             }
-            //简单工厂
+            //data 就是 new Tab() 的对象, 可以使用期构造函数
+            //如果string 为show, 则 data.show(); 则执行 Tab.prototype.show();
+            //所以简单的面向对象知识还需要了解的
             if (typeof option == 'string') {
                 data[option]();
             }
         });
     };
 
+    //起一个Constructor属性, 而不是 $.fn.tab.prototpe.constructor的指向更改,
     $.fn.tab.Constructor = Tab;
 
     //防止冲突
     $.fn.tab.noConflict = function () {
+        //把old 值给回 $.fn.tab 那个已经有的值了, 然后返回this --> $.fn.tab
         $.fn.tab = old;
         return this;
     };
