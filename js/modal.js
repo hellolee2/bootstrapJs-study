@@ -1,5 +1,6 @@
 /**
  * modal弹层解析
+ * @author libaoxu 2016-03-20
 */
 +function ($){
 	'use strict';
