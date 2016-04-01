@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tab学习</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="content">
+    <meta name="description" content="">
+    <meta name="author" content="libaoxu">
+
+    <link rel="stylesheet" href="../css/lib/base.css">
+    <link rel="stylesheet" href="../css/tab.css">
+    <style>
+        ul {
+            border-bottom: 1px solid #ececec;
+        }
+        ul li {
+            float: left;
+            width: 50%;
+            line-height: 2em;
+            text-align: center;
+            cursor: pointer;
+            font-size: .2rem;
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
+        }
+        ul li:first-of-type {
+            border-right: 1px solid #ececec;
+        }
+        ul li.active a {
+            color: rgb(218,57,57);
+        }
+        .tab-content {
+            padding-top: .5rem;
+            margin-top: .5rem;
+            height: 2rem;
+            text-align: center;
+            font-size: .5rem;
+            border: 5px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <!-- 为了能更简洁的表达 html中实现tab对js和css的依赖, 所以不必要的类名 自定义名都去掉,更方便学习  -->
+    <div class="my-container" >
+        <ul class="clearfix">
+            <li class="active"><a data-toggle="tab" data-target="#tab_per_info">个人资料</a></li>
+            <li class=""><a data-toggle="tab" data-target="#tab_per_verify">认证信息</a></li>
+        </ul>
+
+        <div class=" tab-content">
+            <!-- 详情 -->
+            <div class=" tab-pane fade in active"  id="tab_per_info">
+                详情区域
+            </div>
+
+            <!-- 验证 -->
+            <div class=" tab-pane fade " id="tab_per_verify">
+
+                验证区域
+            </div>
+            <!-- 验证结束 -->
+
+        </div>
+        <!-- 个人信息主区域结束 -->
+
+
+    </div>
+
+    <script src="../js/lib/jQuery.js"></script>
+    <script src="../js/transition.js"></script>
+    <script src="../js/tab.js"></script>
+
+</body>
+</html>

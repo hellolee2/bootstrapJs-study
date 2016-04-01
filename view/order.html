@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的订单</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="content">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" href="../../css/lib/base.css">
+    <link rel="stylesheet" href="../../css/personal/order.css">
+</head>
+<body>
+<!-- 个人中心主页 -->
+<div class="order-container" id="sp_order_container">
+
+    <ul class="nav-content clearfix">
+        <li class="nav-item active">
+            <a class="all" data-target="#all" data-toggle="tab">全部</a>
+        </li>
+        <li class="nav-item">
+            <a class="stay-pay" data-target="#stayPay" data-toggle="tab">待支付</a>
+        </li>
+        <li class="nav-item">
+            <a class="stay-send" data-target="#staySend" data-toggle="tab">待发货</a>
+        </li>
+        <li class="nav-item">
+            <a class="stay-receive" data-target="#stayReceive" data-toggle="tab">待收货</a>
+        </li>
+        <li class="nav-item">
+            <a class="stay-evaluate" data-target="#stayEvaluate" data-toggle="tab">待评价</a>
+        </li>
+
+    </ul>
+
+    <div class="tab-content order-content">
+        <!-- 全部区域 -->
+        <div class="tab-pane fade in active" id="all">
+            <div class="order-item" >
+                <div class="header">
+                    <div class="user-name">崔胜贤</div>
+                    <em class="status">待收货</em>
+                </div>
+                <a class="good clearfix" href="orderDetail.html">
+                    <img src="../../img/personal/101.jpg" alt="">
+                    <div class="info">
+                        <p class="good-name">绿茶再精粹水分清露80ml小绿瓶佛为契机我饿哦发叫撒发哦是假的</p>
+                        <div class="bottom">
+                            <b class="count">×1</b>
+                            <b class="price">¥210</b>
+                        </div>
+                    </div>
+                </a>
+                <div class="button-group clearfix">
+                    <button class="order-btn logistics" type="button" name="button" order-type="stayReceive">查看物流</button>
+                    <button class="order-btn confirm" type="button" name="button"  data-order-type="stayReceive">确认收货</button>
+                </div>
+
+            </div>
+
+            <div class="order-item" >
+                <div class="header">
+                    <div class="user-name">崔胜贤</div>
+                    <em class="status">待支付</em>
+                </div>
+                <a class="good clearfix" href="orderDetail.html">
+                    <img src="../../img/personal/101.jpg" alt="">
+                    <div class="info">
+                        <p class="good-name">绿茶再精粹水分清露80ml小绿瓶</p>
+                        <div class="bottom">
+                            <b class="count">×1</b>
+                            <b class="price">¥210</b>
+                        </div>
+                    </div>
+                </a>
+                <button class="order-btn immediate-payment" type="button" name="button"  data-order-type="stayPay">立即支付</button>
+            </div>
+
+            <div class="order-item">
+                <div class="header">
+                    <div class="user-name">崔胜贤</div>
+                    <em class="status">待评价</em>
+                </div>
+                <a class="good clearfix" href="orderDetail.html">
+                    <img src="../../img/personal/101.jpg" alt="">
+                    <div class="info">
+                        <p class="good-name">绿茶再精粹水分清露80ml小绿瓶</p>
+                        <div class="bottom">
+                            <b class="count">×1</b>
+                            <b class="price">¥210</b>
+                        </div>
+                    </div>
+                </a>
+                <button class="order-btn evaluate" type="button" name="button"  data-order-type="stayEvaluate">评价</button>
+            </div>
+
+            <div class="order-item" >
+                <div class="header">
+                    <div class="user-name">崔胜贤</div>
+                    <em class="status">待发货</em>
+                </div>
+                <a class="good clearfix" href="orderDetail.html">
+                    <img src="../../img/personal/101.jpg" alt="">
+                    <div class="info">
+                        <p class="good-name">绿茶再精粹水分清露80ml小绿瓶</p>
+                        <div class="bottom">
+                            <b class="count">×1</b>
+                            <b class="price">¥210</b>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="order-item">
+                <div class="header">
+                    <div class="user-name">崔胜贤</div>
+                    <em class="status">已关闭</em>
+                </div>
+                <a class="good clearfix" href="">
+                    <img src="../../img/personal/101.jpg" alt="">
+                    <div class="info">
+                        <p class="good-name">绿茶再精粹水分清露80ml小绿瓶</p>
+                        <div class="bottom">
+                            <b class="count">×1</b>
+                            <b class="price">¥210</b>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- 待支付区域 -->
+        <div class="tab-pane fade stay-pay" id="stayPay" >
+            <div class="order-item">
+                <div class="header">
+                    <div class="user-name">崔胜贤</div>
+                    <em class="status">待支付</em>
+                </div>
+                <a class="good clearfix" href="">
+                    <img src="../../img/personal/101.jpg" alt="">
+                    <div class="info">
+                        <p class="good-name">绿茶再精粹水分清露80ml小绿瓶</p>
+                        <div class="bottom">
+                            <b class="count">×1</b>
+                            <b class="price">¥210</b>
+                        </div>
+                    </div>
+                </a>
+                <button class="order-btn immediate-payment" type="button" name="button" data-order-type="stayPay">立即支付</button>
+            </div>
+
+        </div>
+
+        <!-- 待发货区域 -->
+        <div class="tab-pane fade stay-send" id="staySend" >
+            <div class="order-item">
+                <div class="header">
+                    <div class="user-name">崔胜贤</div>
+                    <em class="status">待发货</em>
+                </div>
+                <a class="good clearfix" href="">
+                    <img src="../../img/personal/101.jpg" alt="">
+                    <div class="info">
+                        <p class="good-name">绿茶再精粹水分清露80ml小绿瓶</p>
+                        <div class="bottom">
+                            <b class="count">×1</b>
+                            <b class="price">¥210</b>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- 待收货区域 -->
+        <div class="tab-pane fade stay-receive" id="stayReceive">
+            <div class="order-item">
+                <div class="header">
+                    <div class="user-name">崔胜贤</div>
+                    <em class="status">待收货</em>
+                </div>
+                <a class="good clearfix" href="">
+                    <img src="../../img/personal/101.jpg" alt="">
+                    <div class="info">
+                        <p class="good-name">绿茶再精粹水分清露80ml小绿瓶</p>
+                        <div class="bottom">
+                            <b class="count">×1</b>
+                            <b class="price">¥210</b>
+                        </div>
+                    </div>
+                </a>
+
+                <div class="button-group clearfix">
+                    <button class="order-btn logistics" type="button" name="button" order-type="stayReceive">查看物流</button>
+                    <button class="order-btn confirm" type="button" name="button"  data-order-type="stayReceive">确认收货</button>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <!-- 待评价区域 -->
+        <div class="tab-pane fade stay-evaluat" id="stayEvaluate">
+            <div class="order-item">
+                <div class="header">
+                    <div class="user-name">崔胜贤</div>
+                    <em class="status">待评价</em>
+                </div>
+                <a class="good clearfix" href="">
+                    <img src="../../img/personal/101.jpg" alt="">
+                    <div class="info">
+                        <p class="good-name">绿茶再精粹水分清露80ml小绿瓶</p>
+                        <div class="bottom">
+                            <b class="count">×1</b>
+                            <b class="price">¥210</b>
+                        </div>
+                    </div>
+                </a>
+                <button class="order-btn evaluate" type="button" name="button"  data-order-type="stayEvaluate">评价</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div style="height: .5rem;"></div>
+
+</div>
+
+    <script src="http://cdn.bootcss.com/fastclick/1.0.6/fastclick.js"></script>
+    <script src="../../js-debug/lib/require.js"></script>
+    <script>
+
+        requirejs.config({
+            baseUrl: '../../js-debug/personal',
+            path: {
+                'lib': '../lib'
+            },
+            shim: {
+                '../widget/spApp': {
+                    deps: ['../lib/jQuery'],
+                    exports: 'spApp'
+                },
+                'order': {
+                    deps: ['../lib/jQuery', '../widget/spApp'],
+                    exports: 'order'
+                }
+            }
+
+        });
+
+        requirejs(['order'], function (order) {
+            console.log('load finished personal order');
+
+        });
+
+        window.addEventListener('load', function () {
+            FastClick.attach(document.body);
+        });
+
+    </script>
+</body>
+</html>

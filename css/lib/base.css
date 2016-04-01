@@ -1,0 +1,179 @@
+/* ----reset---- */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 16px;
+	font: inherit;
+	vertical-align: baseline;
+}
+button, input {
+    font-family: sans-serif, "Helvetica Neue", Helvetica, STHeiTi, "Microsoft Yahei", "微软雅黑";
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+a {
+    text-decoration: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* --- base ---- */
+html{
+    /*做320以下统一样式*/
+    font-size: 100px;
+    -webkit-user-select: none;   /* 禁止选中文本（如无文本选中需求，此为必选项） */
+    user-select: none;
+    min-height: 100%;
+}
+
+/*适配360以上屏幕*/
+@media (min-width:360px) {
+    html { font-size:112px !important;}
+}
+/*适配400以上屏幕*/
+@media (min-width:400px) {
+    html { font-size:125px !important;}
+}
+/*适配480以上屏幕*/
+@media (min-width:480px) {
+    html { font-size:150px !important;}
+}
+/*适配540以上屏幕*/
+@media (min-width:540px) {
+    html { font-size:168px !important;}
+}
+/*适配640以上屏幕*/
+@media (min-width:640px) {
+    html { font-size:200px !important;}
+}
+/*适配720以上屏幕*/
+@media (min-width:720px) {
+    html { font-size:225px !important;}
+}
+/*适配768以上屏幕*/
+@media (min-width:768px) {
+    html { font-size:240px !important;}
+}
+/*适配800以上屏幕*/
+@media (min-width:800px) {
+    html { font-size:250px !important;}
+}
+/*适配1080以上屏幕*/
+@media (min-width:1080px) {
+    html { font-size:337px !important;}
+}
+body{
+    font-size: 16px;
+    font-family: sans-serif,"Helvetica Neue", Helvetica, STHeiTi, "Microsoft Yahei", "微软雅黑" ;
+    -webkit-user-select: none;   /* 禁止选中文本（如无文本选中需求，此为必选项） */
+    user-select: none;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+img {
+    width: 100%;
+	vertical-align: top;
+}
+img, em,span,div,li,ul,p,a,dl,dd,dt,section {
+	/*解决移动端点击会有一闪的状态*/
+	-webkit-tap-highlight-color:rgba(255,0,0,0);
+	    -ms-tap-highlight-color:rgba(255,0,0,0);
+		 -o-tap-highlight-color:rgba(255,0,0,0);
+			tap-highlight-color:rgba(255,0,0,0);
+}
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+/**** UI *****/
+.page {
+    margin: 1.2em;
+}
+.hide {
+    display: none !important;
+}
+.clearfix {
+    *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    line-height: 0;
+    content: "";
+}
+.clearfix:after {
+    clear: both;
+}
+.texture {
+    text-indent: 2em;
+    line-height: 1.6;
+    color: #333;
+}
+.no-indent {
+    text-indent: 0;
+    padding-top:1em;
+}
+.btn {
+    display: inline-block;
+    font-size: .16rem;
+    width: 100%;
+    background-color: #e84544;
+    border-radius: 6px;
+    text-align: center;
+    color: #fff;
+    padding: .6em 0;
+    border: 1px solid #e84544;
+    text-decoration: none;
+}
+.btn-second {
+    display: inline-block;
+    font-size: .16rem;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 6px;
+    text-align: center;
+    color: #e84544;
+    padding: .8em 0;
+    border: 1px solid #e84544;
+    text-decoration: none;
+}
+
+
+/* 文本两端对齐 */
+p {
+    text-align: justify;
+}

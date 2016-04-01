@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人中心</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="content">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" href="../../css/lib/base.css">
+    <link rel="stylesheet" href="../../css/personal/index.css">
+</head>
+<body>
+<!-- 个人中心主页 -->
+<div class="personal-home-container" id="sp_personal_home_container">
+
+    <div class="home-header">
+        <a class="header-img" href="perInfo.html"><img src="../../img/personal/100.jpg" alt=""></a>
+        <h1>papi酱</h1>
+    </div>
+
+    <ul class="personal-list">
+        <li class="order"> <a href="order.html">我的订单</a> </li>
+        <li class="sale"> <a href="sale.html">我的售出</a> </li>
+        <li class="message"> <a href="message.html">我的消息</a> </li>
+        <li class="attention"> <a href="attention.html">我的关注</a> </li>
+        <li class="historyPlay"> <a href="historyPlay.html">历史回访</a> </li>
+        <li class="setting"> <a href="setting.html">我是设置</a> </li>
+    </ul>
+
+</div>
+
+    <script src="http://cdn.bootcss.com/fastclick/1.0.6/fastclick.js"></script>
+    <script src="../../js-debug/lib/require.js"></script>
+    <script>
+
+        requirejs.config({
+            baseUrl: '../../js-debug/personal',
+            path: {
+                'lib': '../lib'
+            },
+            shim: {
+                '../widget/spApp': {
+                    deps: ['../lib/jQuery'],
+                    exports: 'spApp'
+                },
+                'index': {
+                    deps: ['../lib/jQuery', '../widget/spApp'],
+                    exports: 'index'
+                }
+            }
+
+        });
+
+        requirejs(['index' ], function (index) {
+            console.log('load finished personal index');
+
+        });
+
+        window.addEventListener('load', function () {
+            FastClick.attach(document.body);
+        });
+
+    </script>
+</body>
+</html>
