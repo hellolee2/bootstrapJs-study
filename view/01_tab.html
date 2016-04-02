@@ -70,6 +70,11 @@
     <script src="../js/lib/jQuery.js"></script>
     <script src="../js/transition.js"></script>
     <script src="../js/tab.js"></script>
+    <script>
+        $('a[data-target="#tab_per_verify"]').on('show.bao.tab', function (e) {
+            console.log(e); //可以看到relatedTarget 就是上一个li.active下的a标签, 即再tab.js里面 $PreviousA
+        });
+    </script>
 
 </body>
 </html>

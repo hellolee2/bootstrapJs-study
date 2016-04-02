@@ -3,7 +3,7 @@
  * @author libaoxu 2016-03-20
 */
 if (typeof jQuery === 'undefined') {
-	throw new Error('实拍H5是依赖jQuery的, 请引入! 请引入! 请引入! 重要的事情说三遍.');
+	throw new Error('transitionjs是依赖jQuery的, 请引入! 请引入! 请引入! 重要的事情说三遍.');
 }
 
 +function ($) {

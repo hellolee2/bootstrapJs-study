@@ -25,7 +25,7 @@
         //如果是该tab-pane已经active了, 再点击就返回
         if ($ElemA.parent('li').hasClass('active')) return;
 
-        var $PreviousA = $Ul.find('.active a')[0]; //前一个ative 下的 a标签
+        var $PreviousA = $Ul.find('.active a')[0]; //当前的li.ative下的a标签, 是下一个 li.active a标签 的前li.active a
         //绑定自定义事件
         var e          = $.Event('show.bao.tab', {
             relatedTarget: $PreviousA
