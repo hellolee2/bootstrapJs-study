@@ -47,7 +47,7 @@
                 relatedTarget: $PreviousA
             });
             //tab-pane 区域展示后(shown) 的api接口
-            //trigger 传过去的参数 可以再绑定该自定义事件函数中 通过 e.data.relatedTarget 获得
+            //trigger 传过去的参数 可以再绑定该自定义事件函数中 通过e(即第一个参数) e.relatedTarget 获得
 			$Target.trigger({
                 type: 'shown.bao.tabPane',
 				element: $ElemA,
